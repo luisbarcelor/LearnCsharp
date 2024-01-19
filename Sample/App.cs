@@ -8,6 +8,7 @@ namespace Sample
         {
             CultureInfo.CurrentCulture = new CultureInfo("en-US");
             
+            ContosoPets.Start();
             // StringModifications.FindSubstringsComplex();
             // StringModifications.FindAnySubstring();
             //  ArraysAndStrings.SplitJoin();

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/lbarcelo/Desktop/code/CsharpProjects/LearnCsharp/Sample/Sample.csproj",
+      "projectUniqueName": "/home/lbarcelo/Desktop/LearnCsharp/Sample/Sample.csproj",
       "projectName": "Sample",
-      "projectPath": "/home/lbarcelo/Desktop/code/CsharpProjects/LearnCsharp/Sample/Sample.csproj",
+      "projectPath": "/home/lbarcelo/Desktop/LearnCsharp/Sample/Sample.csproj",
       "packagesPath": "/home/lbarcelo/.nuget/packages/",
-      "outputPath": "/home/lbarcelo/Desktop/code/CsharpProjects/LearnCsharp/Sample/obj/",
+      "outputPath": "/home/lbarcelo/Desktop/LearnCsharp/Sample/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/lbarcelo/.nuget/NuGet/NuGet.Config"

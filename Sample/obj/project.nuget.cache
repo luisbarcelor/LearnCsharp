@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iv+zVhnli5xxE75cWCD4Aw2AI/OG3gCQodOI6fdhi63tHTpcGp4xN5T1kb1Nzo+/p+44xYshy5MdW/O3lbPu9A==",
+  "dgSpecHash": "ZzndgHyZydd/j+0SwKLud+RblrJHJn/0pX7wGWa6gyEQBaag2UAg5O2pUZvTF+F5GnvBwfVPUKnZM9YtuiryPA==",
   "success": true,
-  "projectFilePath": "/home/lbarcelo/Desktop/code/CsharpProjects/LearnCsharp/Sample/Sample.csproj",
+  "projectFilePath": "/home/lbarcelo/Desktop/LearnCsharp/Sample/Sample.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

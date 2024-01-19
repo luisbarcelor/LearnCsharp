@@ -11,6 +11,7 @@ public class ContosoPets
         string animalPhysicalDescription = "";
         string animalPersonalityDescription = "";
         string animalNickname = "";
+        string suggestedDonation = "";
 
         // variables that support data entry
         string menuSelection = "";
@@ -18,7 +19,7 @@ public class ContosoPets
         bool validEntry;
         
         // array used to store runtime data, there is no persisted data
-        string[,] ourAnimals = new string[maxPets, 6];
+        string[,] ourAnimals = new string[maxPets, 7];
         
         // create some initial ourAnimals array entries
         for (int i = 0; i < maxPets; i++)
@@ -32,6 +33,7 @@ public class ContosoPets
                     animalPhysicalDescription = "medium sized cream colored female golden retriever weighing about 65 pounds. housebroken.";
                     animalPersonalityDescription = "loves to have her belly rubbed and likes to chase her tail. gives lots of kisses.";
                     animalNickname = "lola";
+                    suggestedDonation = "85.00";
                     break;
                 case 1:
                     animalSpecies = "dog";
@@ -40,6 +42,7 @@ public class ContosoPets
                     animalPhysicalDescription = "large reddish-brown male golden retriever weighing about 85 pounds. housebroken.";
                     animalPersonalityDescription = "loves to have his ears rubbed when he greets you at the door, or at any time! loves to lean-in and give doggy hugs.";
                     animalNickname = "loki";
+                    suggestedDonation = "49.99";
                     break;
                 case 2:
                     animalSpecies = "cat";
@@ -48,6 +51,7 @@ public class ContosoPets
                     animalPhysicalDescription = "small white female weighing about 8 pounds. litter box trained.";
                     animalPersonalityDescription = "friendly";
                     animalNickname = "Puss";
+                    suggestedDonation = "40.00";
                     break;
                 case 3:
                     animalSpecies = "cat";
@@ -56,6 +60,7 @@ public class ContosoPets
                     animalPhysicalDescription = "";
                     animalPersonalityDescription = "";
                     animalNickname = "";
+                    suggestedDonation = "";
                     break;
                 default:
                     animalSpecies = "";
@@ -73,6 +78,13 @@ public class ContosoPets
             ourAnimals[i, 3] = "Nickname: " + animalNickname;
             ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
             ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
+
+            if (!decimal.TryParse(suggestedDonation, out decimal decimalDonation))
+            {
+                decimalDonation = 45.00m;
+            }
+            
+            ourAnimals[i, 6] = $"Suggested Donation: {decimalDonation:C2}";
         }
 
         // display the top-level menu options
@@ -107,7 +119,7 @@ public class ContosoPets
                         if (ourAnimals[i, 0] != "ID #: ")
                         {
                             Console.WriteLine();
-                            for (int j = 0; j < 6; j++) 
+                            for (int j = 0; j < 7; j++) 
                             {
                                 Console.WriteLine(ourAnimals[i, j]);
                             }
@@ -277,7 +289,7 @@ public class ContosoPets
                         
                         
                         animalPhysicalDescription = ourAnimals[i, 4];
-                        if (animalPhysicalDescription is "Physical description: " or "Physical description: tbd")
+                        if (animalPhysicalDescription == "Physical description: " || animalPhysicalDescription == "Physical description: tbd" || animalPhysicalDescription.Length < 10)
                         {
                             do
                             {
@@ -335,7 +347,7 @@ public class ContosoPets
                         }
 
                         animalPersonalityDescription = ourAnimals[i, 5];
-                        if (animalPersonalityDescription is "Personality: " or "Personality: tbd")
+                        if (animalPersonalityDescription == "Personality: " || animalPersonalityDescription == "Personality: tbd" || animalPersonalityDescription.Length < 10)
                         {
                             do
                             {
@@ -385,8 +397,40 @@ public class ContosoPets
                     break;
                 case "8":
                     // Display all dogs with a specified characteristic
-                    Console.WriteLine($"You selected option 8");
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
+                    string dogCharacteristic = "";
+
+                    while (dogCharacteristic == "")
+                    {
+                        Console.WriteLine("\nEnter one desired dog characteristic to search for:");
+                        readResult = Console.ReadLine();
+                        if (readResult == null) continue;
+
+                        dogCharacteristic = readResult.ToLower().Trim();
+                    }
+
+                    bool noMatches = true;
+
+                    for (int i = 0; i < maxPets; i++)
+                    {
+                        if (ourAnimals[i, 1].Contains("dog"))
+                        {
+                            string dogDescription = $"{ourAnimals[i, 4]}\n{ourAnimals[i, 5]}";
+                            if (dogDescription.Contains(dogCharacteristic))
+                            {
+                                string nickname = ourAnimals[i, 3].Replace("Nickname: ", "");
+                                Console.WriteLine($"\nOur dog {nickname} is a match!");
+                                Console.WriteLine(dogDescription);
+                                
+                                noMatches = false;
+                            }
+                        }
+                    }
+
+                    if (noMatches)
+                    {
+                        Console.WriteLine($"None of our dogs are a match found for: {dogCharacteristic}");
+                    }
+
                     Console.WriteLine("Press the Enter key to continue.");
                     readResult = Console.ReadLine();
                     break;
