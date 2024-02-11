@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/lbarcelo/.nuget/packages/": {}
+    "C:\\Users\\Luis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/lbarcelo/Desktop/LearnCsharp/ConsoleApp1/ConsoleApp1.csproj",
+      "projectUniqueName": "S:\\Csharp\\LearnCsharp\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "/home/lbarcelo/Desktop/LearnCsharp/ConsoleApp1/ConsoleApp1.csproj",
-      "packagesPath": "/home/lbarcelo/.nuget/packages/",
-      "outputPath": "/home/lbarcelo/Desktop/LearnCsharp/ConsoleApp1/obj/",
+      "projectPath": "S:\\Csharp\\LearnCsharp\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\Luis\\.nuget\\packages\\",
+      "outputPath": "S:\\Csharp\\LearnCsharp\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/lbarcelo/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Luis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

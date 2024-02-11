@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/AvaloniaApplication.csproj": {}
+    "S:\\Csharp\\LearnCsharp\\AvaloniaApplication\\AvaloniaApplication.csproj": {}
   },
   "projects": {
-    "/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/AvaloniaApplication.csproj": {
+    "S:\\Csharp\\LearnCsharp\\AvaloniaApplication\\AvaloniaApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/AvaloniaApplication.csproj",
+        "projectUniqueName": "S:\\Csharp\\LearnCsharp\\AvaloniaApplication\\AvaloniaApplication.csproj",
         "projectName": "AvaloniaApplication",
-        "projectPath": "/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/AvaloniaApplication.csproj",
-        "packagesPath": "/home/lbarcelo/.nuget/packages/",
-        "outputPath": "/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/obj/",
+        "projectPath": "S:\\Csharp\\LearnCsharp\\AvaloniaApplication\\AvaloniaApplication.csproj",
+        "packagesPath": "C:\\Users\\Luis\\.nuget\\packages\\",
+        "outputPath": "S:\\Csharp\\LearnCsharp\\AvaloniaApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/lbarcelo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Luis\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

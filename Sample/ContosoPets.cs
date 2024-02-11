@@ -390,45 +390,117 @@ public class ContosoPets
                     break;
                 case "7":
                     // Display all cats with a specified characteristic
-                    Console.WriteLine($"You selected option 7");
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
+                    string[] catCharacteristics = [];
+                    
+                    do
+                    {
+                        Console.WriteLine("Enter characteristics you want to search for separated with commas:");
+                        readResult = Console.ReadLine();
+                        Console.WriteLine();
+                        
+                        if (string.IsNullOrEmpty(readResult)) continue;
+                        
+                        catCharacteristics = readResult.ToLower().Trim().Split(',');
+                        Array.Sort(catCharacteristics);
+                        
+                    } while (catCharacteristics.Length == 0);
+                        
+                    bool noCatMatch = true;
+                    
+                    for (int i = 0; i < maxPets; i++)
+                    {
+                        string currentId = ourAnimals[i, 0];
+                        string currentNickname = ourAnimals[i, 3];
+                        string currentDescription = $"{ourAnimals[i, 4]}\n{ourAnimals[i, 5]}";
+                        int currentMatches = 0;
+                        
+                        if (ourAnimals[i, 1].Contains("cat"))
+                        {
+                            foreach (var characteristic in catCharacteristics)
+                            {
+                                if (currentDescription.Contains(characteristic))
+                                {
+                                    Console.WriteLine($"Our cat {currentNickname.Replace("Nickname: ", "")} " +
+                                                      $"is a match for {characteristic}!");
+                                    
+                                    currentMatches++;
+                                    noCatMatch = false;
+                                }
+                            }
+
+                            if (currentMatches > 0)
+                            {
+                                Console.WriteLine($"\n{currentNickname} ({currentId})");
+                                Console.WriteLine($"{currentDescription}\n");
+                            }
+                        }
+                    }
+
+                    if (noCatMatch)
+                    {
+                        Console.WriteLine("None of our cats are a match for the given characteristics");
+                    }
+                    
                     Console.WriteLine("Press the Enter key to continue.");
                     readResult = Console.ReadLine();
                     break;
                 case "8":
                     // Display all dogs with a specified characteristic
-                    string dogCharacteristic = "";
-
-                    while (dogCharacteristic == "")
+                    string[] dogCharacteristics = [];
+                    
+                    do
                     {
-                        Console.WriteLine("\nEnter one desired dog characteristic to search for:");
+                        Console.WriteLine("Enter characteristics you want to search for separated with commas:");
                         readResult = Console.ReadLine();
-                        if (readResult == null) continue;
+                        Console.WriteLine();
+                        
+                        if (string.IsNullOrEmpty(readResult)) continue;
+                        
+                        dogCharacteristics = readResult.ToLower().Split(',');
+                        for (int i = 0; i < dogCharacteristics.Length; i++)
+                        {
+                            dogCharacteristics[i] = dogCharacteristics[i].Trim();
+                        }
 
-                        dogCharacteristic = readResult.ToLower().Trim();
-                    }
-
-                    bool noMatches = true;
-
+                        Array.Sort(dogCharacteristics);
+                    } while (dogCharacteristics.Length == 0);
+                        
+                    bool noDogMatch = true;
+                    
                     for (int i = 0; i < maxPets; i++)
                     {
+                        int currentMatches = 0;
+                        string currentId = ourAnimals[i, 0];
+                        string currentNickname = ourAnimals[i, 3];
+                        string currentDescription = $"{ourAnimals[i, 4]}\n{ourAnimals[i, 5]}";
+                        
                         if (ourAnimals[i, 1].Contains("dog"))
                         {
-                            string dogDescription = $"{ourAnimals[i, 4]}\n{ourAnimals[i, 5]}";
-                            if (dogDescription.Contains(dogCharacteristic))
+                            foreach (var characteristic in dogCharacteristics)
                             {
-                                string nickname = ourAnimals[i, 3].Replace("Nickname: ", "");
-                                Console.WriteLine($"\nOur dog {nickname} is a match!");
-                                Console.WriteLine(dogDescription);
+                                string characteristicUpper = characteristic.ToUpper();
+                                string nicknameUpper = currentNickname.Replace("Nickname: ", "").ToUpper();
                                 
-                                noMatches = false;
+                                SearchAnimation("dog", nicknameUpper, characteristicUpper);
+                                if (currentDescription.Contains(characteristic))
+                                {
+                                    Console.WriteLine($"\rOur dog {nicknameUpper} is a match for {characteristicUpper}!");
+                                    currentMatches++;
+                                    noDogMatch = false;
+                                }
+                            }
+
+                            if (currentMatches > 0)
+                            {
+                                Console.WriteLine($"\n{currentNickname} ({currentId})");
+                                Console.WriteLine($"{currentDescription}\n");
                             }
                         }
                     }
 
-                    if (noMatches)
+                    if (noDogMatch)
                     {
-                        Console.WriteLine($"None of our dogs are a match found for: {dogCharacteristic}");
+                        Console.WriteLine("None of our dogs are a match for the given characteristics");
                     }
 
                     Console.WriteLine("Press the Enter key to continue.");
@@ -444,5 +516,16 @@ public class ContosoPets
             }
 
         } while (menuSelection != "exit");
+    }
+
+    public static void SearchAnimation(string species, string nickname, string searchTerm)
+    {
+        string[] icons = ["|", "/", "-", "\\", "|", "/", "-", "\\", "|", "/", "-", "\\", "|", "/", "-", "\\", "|", "/", "-", "\\", "|", "/", "-", "\\"];
+        for (int i = icons.Length - 1; i >= 0; i--)
+        {
+            Console.Write($"\rSearching... {species} {nickname} for {searchTerm} {icons[i]} {i / 4}");
+            Thread.Sleep(250);
+            Console.Write($"\r{new String(' ', Console.BufferWidth)}");
+        }
     }
 }

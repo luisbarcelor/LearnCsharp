@@ -87,4 +87,15 @@ public class StringFormatting
             
         Console.WriteLine(comparisonMessage);
     }
+    
+    public static void BufferWidth()
+    {
+        Console.Write("Hola buenas!");
+        Thread.Sleep(1000);
+        Console.Write($"\r{new String(' ', Console.BufferWidth)}");
+        Console.Write($"\rEres un makina tio!");
+        Thread.Sleep(1000);
+        Console.Write($"\r{new String(' ', Console.BufferWidth)}");
+        Console.Write("\rSigue asi!!!");
+    }
 }

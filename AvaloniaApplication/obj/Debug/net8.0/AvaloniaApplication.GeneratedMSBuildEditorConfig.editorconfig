@@ -13,12 +13,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AvaloniaApplication
-build_property.ProjectDir = /home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/
+build_property.ProjectDir = S:\Csharp\LearnCsharp\AvaloniaApplication\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/App.axaml]
+[S:/Csharp/LearnCsharp/AvaloniaApplication/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/lbarcelo/Desktop/LearnCsharp/AvaloniaApplication/MainWindow.axaml]
+[S:/Csharp/LearnCsharp/AvaloniaApplication/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
